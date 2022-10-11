@@ -1,0 +1,61 @@
+@import 'bootstrap';
+
+  .navbar {
+  background-color: black !important;
+  }
+  
+  
+  #logo {
+    float: left;
+    font-size: 1.7em;
+    color: white !important;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: bold;
+  }
+
+  .nav-link{
+    color: white !important;
+  }
+
+  .navbar-brand {
+    font-size: 3rem;
+  }
+  
+  h1 {
+    color: white !important;
+    //text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: normal;
+  }
+  
+  #home-conteiner{
+    margin: 25px;
+  }
+
+  #jumbo {
+    background-image: asset-url("bg_jumbo.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 425px;
+    text-align: center center;
+  }
+
+  /* Sticky Footer Classes */
+
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+/* Other Classes for Page Styling */
+
+body {
+  background: #007bff;
+  background: linear-gradient(to right, #0062E6, #33AEFF);
+}
