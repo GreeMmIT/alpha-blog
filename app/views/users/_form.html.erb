@@ -1,0 +1,43 @@
+<div class="conteiner m-4">
+
+  <div class="row justify-content-center">
+    <div class="col-10">
+      
+      <%= render 'shared/errors', obj: @user %>
+
+      <%= form_with(model: @user , data: {turbo:false} ,class:"shadow p-3 mb-5 bg-info rounded", local: true) do |f|  %>
+
+        <div class="form_group row">
+          <%= f.label :username, class: "col-2 col-form-label text-light"  %>
+          <div class="col-10">
+            <%= f.text_field :username, class: "form-control shadow rounded", placeholder:"Enter a Username" %> 
+          </div>
+        </div>
+<br>
+        <div class="form_group row">
+          <%= f.label :email , class: "col-2 col-form-label text-light"  %>
+          <div class="col-10">
+            <%= f.email_field :email,class: "form-control shadow rounded" %>
+          </div>
+        </div>
+<br>
+        <div class="form_group row">
+          <%= f.label :password , class: "col-2 col-form-label text-light"  %>
+          <div class="col-10">
+            <%= f.password_field :password, class: "form-control shadow rounded", placeholder:"Chose a password"  %>
+          </div>
+        </div>
+<br>
+
+
+        <div class="form_group row justify-content-center">
+          <%= f.submit  "Sign up", class: "btn btn-outline-light btn-lg col-2" %>
+        </div>
+
+      <% end %>
+      <div class="mb-3">
+            <%= link_to 'Return list', articles_path %>
+      </div>
+    </div>
+  </div>
+</div>
