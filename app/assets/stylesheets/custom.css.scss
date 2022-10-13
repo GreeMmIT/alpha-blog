@@ -4,7 +4,6 @@
   background-color: black !important;
   }
   
-  
   #logo {
     float: left;
     font-size: 1.7em;
@@ -23,7 +22,7 @@
   }
   
   h1 {
-    color: white !important;
+    color: rgb(0, 0, 0) !important;
     //text-transform: uppercase;
     letter-spacing: -1px;
     font-weight: normal;
@@ -51,11 +50,6 @@ body {
 
 #page-content {
   flex: 1 0 auto;
+  background: lightgray;
 }
 
-/* Other Classes for Page Styling */
-
-body {
-  background: #007bff;
-  background: linear-gradient(to right, #0062E6, #33AEFF);
-}

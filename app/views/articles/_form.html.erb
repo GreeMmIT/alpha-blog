@@ -1,39 +1,48 @@
-<% if @article.errors.any? %>
-  <h2>Questi errori non permettono il salavtaggio dell'articolos</h2>
-  <ul>
-    <% @article.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end  %>
-  </ul>
-<% end %>
+<div class="conteiner m-4">
+
+  <%= render 'shared/errors'%>
+
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <%= form_with(model: @article , data: {turbo:false} ,class:"shadow p-3 mb-5 bg-info rounded", local: true) do |f|  %>
+
+        <div class="form_group row">
+          <%= f.label :title, class: "col-2 col-form-label text-light"  %>
+          <div class="col-10">
+            <%= f.text_field :title, class: "form-control shadow rounded", placeholder:"Titolo" %> 
+          </div>
+        </div>
+
+        <div class="form_group row">
+          <%= f.label :description , class: "col-2 col-form-label text-light"  %>
+          <div class="col-10">
+            <%= f.text_area :description,class: "form-control shadow rounded", rows:10 %>
+          </div>
+        </div>
+
+        <div class="form_group row">
+          <%= f.label :body , class: "col-2 col-form-label"  %>
+          <div class="col-10">
+            <%= f.text_area :body,class: "form-control shadow rounded", rows:10 %>
+          </div>
+        </div>
 
 
-<%= form_with(model: @article ,local: true) do |f|  %>
+        <div class="form_group row">
+          <%= f.label :subtitle , class: "col-2 col-form-label"  %>
+          <div class="col-10">
+            <%= f.text_area :subtitle,class: "form-control shadow rounded" %>
+          </div>
+        </div>
 
-  <p>
-    <%= f.label :title  %><br/>
-    <%= f.text_field :title  %>
-  </p>
+        <div class="form_group row justify-content-center">
+          <%= f.submit class: "btn btn-outline-light btn-lg col-2" %>
+        </div>
 
-  <p>
-    <%= f.label :description  %><br/>
-    <%= f.text_area :description  %>
-  </p>
-
-  <p>
-    <%= f.label :body  %><br/>
-    <%= f.text_area :body  %>
-  </p>
-
-
-  <p>
-    <%= f.label :subtitle  %><br/>
-    <%= f.text_field :subtitle  %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
-
-
-<% end %>
+      <% end %>
+      <div class="mb-3">
+            <%= link_to 'Return list', articles_path %>
+      </div>
+    </div>
+  </div>
+</div>
