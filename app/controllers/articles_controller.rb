@@ -20,7 +20,9 @@ class ArticlesController < ApplicationController
 
   
   def create
+
     @article = Article.new(article_params)
+    @article.user = User.first
     if @article.save
       flash[:notice] = "Articolo salvato correttamente"
       redirect_to article_path(@article) #pesca in automatico l'id dell'articolo appena creato e esegue la route show 
