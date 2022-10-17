@@ -1,0 +1,23 @@
+<div class="conteiner">
+  <% @users.each do |usr| %> 
+    <div class="row justify-content-md-center">
+      <div class="col-8 mt-4">
+        <div class="card text-center shadow mb-5 bg-white rounded">
+          <div class="card-header font-italic">
+            <%= link_to usr.username, usr %>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">
+            <%= link_to gravatar_for( usr, size:150 ), usr %></h5>
+            <p class="card-text"><%= pluralize(usr.articles.count, "article") %></p>
+            <%= link_to "View Profile", usr, class:"btn btn-outline-success" %>
+            <%= link_to "Edit Profile", edit_user_path(usr), class:"btn btn-outline-info" %>
+          </div>
+          <div class="card-footer text-muted">
+            <small> Joined <%= time_ago_in_words(usr.created_at) %> ago, edited <%= time_ago_in_words(usr.updated_at) %> ago</small>
+          </div>
+        </div>
+      </div>  
+    </div>
+  <% end %>
+</div>
