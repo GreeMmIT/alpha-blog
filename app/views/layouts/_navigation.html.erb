@@ -22,7 +22,10 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
+          <%= link_to 'log In', login_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Logout', logout_path, class: "nav-link",  data: {confirm: "Eseguire il logout? ", turbo_method: :delete }  %>
         </li>
       </ul>
       <form class="d-flex" role="search">
