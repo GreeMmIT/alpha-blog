@@ -10,28 +10,37 @@
             <%= f.text_field :title, class: "form-control shadow rounded", placeholder:"Titolo" %> 
           </div>
         </div>
-
+<br>
         <div class="form_group row">
           <%= f.label :description , class: "col-2 col-form-label text-light"  %>
           <div class="col-10">
             <%= f.text_area :description,class: "form-control shadow rounded", rows:10 %>
           </div>
         </div>
-
+<br>
         <div class="form_group row">
           <%= f.label :body , class: "col-2 col-form-label"  %>
           <div class="col-10">
-            <%= f.text_area :body,class: "form-control shadow rounded", rows:10 %>
+            <%= f.text_area :body,class: "form-control shadow rounded", rows:2 %>
           </div>
         </div>
-
-
+<br>
         <div class="form_group row">
           <%= f.label :subtitle , class: "col-2 col-form-label"  %>
           <div class="col-10">
             <%= f.text_area :subtitle,class: "form-control shadow rounded" %>
           </div>
         </div>
+<br>
+        <div class="form_group row">
+          <%= f.label :category , class: "col-2 col-form-label"  %>
+          <div class="col-10">
+            <%= f.collection_select(:category_ids, Category.all,:id, :name, 
+                                    {prompt: "Make you selection from the list can be empty"}, 
+                                    {multiple: true, size: 3, class: "custom-select shadow rounded"})  %>
+          </div>
+        </div>
+<br>
 
         <div class="form_group row justify-content-center">
           <%= f.submit class: "btn btn-outline-light btn-lg col-2" %>

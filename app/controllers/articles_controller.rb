@@ -23,7 +23,7 @@ class ArticlesController < ApplicationController
 
   
   def create
-
+    byebug
     @article = Article.new(article_params)
     @article.user = current_user
     if @article.save
@@ -60,7 +60,7 @@ class ArticlesController < ApplicationController
 
 
   def article_params
-    params.require(:article).permit(:title, :description, :body, :subtitle)
+    params.require(:article).permit(:title, :description, :body, :subtitle, category_ids: [])
   end
 
   def require_same_user
